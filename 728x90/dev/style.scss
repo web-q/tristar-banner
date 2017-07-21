@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700');
+@charset "UTF-8";
+
+/* CSS Document */
+
+$bannerBackColor: #004990;
+$bannerTextColor: #ffffff;
+$erTextColor: #ff6347;
+$erWaitTextColor: #f22613;
+$erBackColor: #000000;
+
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* Default style, feel free to remove if not needed. */
+
+body,
+body * {
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  font: 100%/1.5 Open Sans, sans-serif;
+}
+
+
+/* Div layer for the entire banner. */
+
+#container_ad {
+  -ms-transform-origin: 0% 0%;
+  /* IE 9 */
+  -webkit-transform-origin: 0% 0%;
+  /* Safari and Chrome */
+  -moz-transform-origin: 0% 0%;
+  /* Firefox */
+  -o-transform-origin: 0% 0%;
+  /* Opera */
+  position: absolute;
+  // width and height are 2px less than the expected 
+  // size to accommodate the 1px border on the ad
+  width: 726px;
+  height: 88px;
+  overflow: hidden;
+  border: 1px solid #666666;
+  top: 0px;
+  left: 0px;
+  margin: auto;
+}
+
+#content_ad {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  background-color: $bannerBackColor;
+  .logo-wrapper {
+    float: left;
+    padding: 4px;
+    background-color: $bannerBackColor;
+    height: 80px;
+    width: 360px;
+    font-size: 0;
+    text-align: center;
+    .logo-align {
+      display: inline-block;
+      height: 80px;
+      vertical-align: middle;
+    }
+    .logo {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 360px;
+      max-height: 80px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .title {
+    float: left;
+    padding: 4px;
+    background-color: $bannerBackColor;
+    height: 80px;
+    width: 110px;
+    text-align: center;
+    span {
+      display: block;
+      vertical-align: top;
+      line-height: 20px;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $bannerTextColor;
+    }
+    span.er {
+      line-height: 40px;
+      font-size: 36px;
+      font-weight: 700;
+      color: $erTextColor;
+    }
+  }
+ .er-wait-time{
+    float:left;
+    background: $erBackColor;
+    width: 240px;
+    height: 88px;    
+    
+    .er-wait-triangle{
+      float: left;
+      width: 0; 
+      height: 0;
+      border: 0 solid transparent;
+      border-bottom-width: 18px;
+      border-top-width: 18px;
+      border-left: 18px solid #004990;
+      margin-top: 24px;
+      margin-left: -1px;
+    }
+    .time-display{
+      text-align: center;
+      height: 88px;
+      .time{
+        font-family: 'Orbitron', sans-serif;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 5px;
+        font-size: 64px;
+        line-height: 64px;        
+        color: $erWaitTextColor;
+      }
+      .mins{
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 25px;        
+        font-size: 21px;
+        line-height: 21px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $bannerTextColor;
+      }
+      .published{          
+          font-size: 12px;
+          line-height: 12px;
+          height:12px;
+        a{
+          color: $bannerTextColor;
+          text-decoration: none;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+      &.feedloading{
+        .mins, .published{
+          display:none;
+        }
+      }
+    }
+  }
+}
+
+.loading {
+  display: none;
+}
+
+.feedloading{
+
+  .loading{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 25px;
+  }
+  .loading span {
+
+      background: transparent;
+      border-radius: 50%;
+      box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+      display: inline-block;
+      height: 5px;
+      width:  5px;
+      margin-left: 3px;
+      margin-bottom: 5px;
+
+        -webkit-animation:  loading_dots 0.8s linear infinite;
+        -moz-animation:     loading_dots 0.8s linear infinite;
+        -ms-animation:      loading_dots 0.8s linear infinite;
+      animation:            loading_dots 0.8s linear infinite;
+  }
+
+  .loading :nth-child(1) {
+    -webkit-animation-delay:  0.37s;
+          -moz-animation-delay:     0.37s;
+          -ms-animation-delay:      0.37s;
+        animation-delay:            0.37s;
+  }
+
+  .loading :nth-child(2) {
+            -webkit-animation-delay:  0.5s;
+          -moz-animation-delay:     0.5s;
+          -ms-animation-delay:      0.5s;
+        animation-delay:            0.5s;
+  }
+
+  .loading :nth-child(3) {
+      -webkit-animation-delay:  0.8s;
+          -moz-animation-delay:     0.8s;
+          -ms-animation-delay:      0.8s;
+        animation-delay:            0.8s;
+  }
+}
+
+/*
+  Define the animation for every efing vendor prefix
+*/
+
+@-webkit-keyframes loading_dots {
+  0% {
+    background: transparent;
+  }
+  50% {
+    background: #E4E4E4;
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+@-moz-keyframes loading_dots {
+  0% {
+    background: transparent;
+  }
+  50% {
+    background: #E4E4E4;
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+@-ms-keyframes loading_dots {
+  0% {
+    background: transparent;
+  }
+  50% {
+    background: #E4E4E4;
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+@keyframes loading_dots {
+  0% {
+    background: transparent;
+  }
+  50% {
+    background: #E4E4E4;
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}

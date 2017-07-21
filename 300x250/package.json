@@ -1,0 +1,40 @@
+{
+  "name": "tristarDoubleClickBanner",
+  "version": "1.0.0",
+  "bannerSize": "300x250",
+  "description": "Tristar Double Click Banner Template",
+  "main": "index.html",
+  "keywords": [
+    "banner",
+    "html"
+  ],
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-connect": "^3.2.0",
+    "gulp-header": "^1.2.2",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-open": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.2.0",
+    "gulp-size": "^2.1.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "gulp-watch": "^4.3.4",
+    "gulp-zip": "^3.0.2",
+    "htmlparser2": "^3.9.1",
+    "image-size": "^0.5.0",
+    "node-notify": "^1.0.0",
+    "run-sequence": "^2.0.0",
+    "gulp-compile-handlebars": "^0.6.1",
+    "merge-stream": "^1.0.1",
+    "gulp-download": "0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnfmorton/generator-buildabanner"
+  },
+  "license": "MIT"
+}

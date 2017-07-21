@@ -1,0 +1,151 @@
+<!-- HTML 5 Ad Template from DoubleClick by Google but has been modified -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{title}}</title>
+  <!-- ad.size is not required for DoubleClick Rich media ads but is included because it is an unofficial standard -->
+  <meta name="ad.size" content="width=300,height=250">
+  <!-- Studio Enabler Required -->
+  <!-- this was updated to work on http or https by removing the protocal entirely -->
+  <!--
+    For offline use;
+    <script src="../offline/Enabler.js" type="text/javascript"></script>
+
+     -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script>
+    var clickTag0 = "{{url}}";
+    var clickTag1 = "{{disclaimer}}";    
+
+  </script>
+  <script src="//s0.2mdn.net/ads/studio/Enabler.js"></script>
+  <style type="text/css">
+  #container_ad {
+    display: none;
+    z-index: 20;
+  }
+
+  button {
+    background: none;
+    outline: 0;
+    border: 0;
+  }
+
+  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <script language="javascript">
+  // Initialize Enabler - DoubleClick referrs to this as the most
+  // important piece of code in your banner. If it's not here
+  // you don't have a DoubleClick ad
+  var erFeedURL = location.protocol + '//{{erfeed}}';
+
+  window.onload = function() {
+    if (Enabler.isInitialized()) {
+      init();
+    } else {
+      Enabler.addEventListener(studio.events.StudioEvent.INIT, init);
+    }
+  }
+
+  // init() will only be run once the Enabler is initialized
+  function init() {
+    // Enabler provides ways for us to check status of the page
+    // First, we'll check to be sure the page is loadedd
+    if (Enabler.isPageLoaded()) {
+      // the page is loaded, now call the page load handler
+      pageLoadedHandler();
+    } else {
+      Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, pageLoadedHandler);
+    }
+  }
+
+  function pageLoadedHandler() {
+    // we only want to run the ad if it's visible to the user
+    // and the Enabler let's us check if it is visible with the
+    // Enabler.isVisible property
+    if (Enabler.isVisible()) {
+      adVisibilityHandler();
+    } else {
+      Enabler.addEventListener(studio.events.StudioEvent.VISIBLE,
+        adVisibilityHandler);
+    }
+  }
+
+  // This _politeLoad function will load any number of
+  // JS files using the Enabler's built in loadScript
+  // function then it will issue a call back when done
+  // Where did it come from?
+  // http://greensock.com/forums/topic/12147-polite-loading-gsap-into-a-dc-html5-banner/
+  //
+  function _politeLoad(urls, onComplete) {
+    var i;
+    var l = urls.length;
+    var loaded = 0;
+    
+    var checkProgress = function() {
+      if (++loaded === l && onComplete) {
+        onComplete();
+      }
+    };
+
+    for (i = 0; i < l; i++) {
+      Enabler.loadScript(urls[i], checkProgress);
+    }
+  }
+
+  function adVisibilityHandler() {
+    // The ad is actual in a visible area, now we can
+    // finally start the banner
+
+    // we'll feed these into the _politeLoad helper function
+    // and give it a callback, bannerInit which lives in the script.js file
+    _politeLoad(['script.js'], function() {
+      console.log('Banner is ready to be initialized.');
+      bannerInit();
+    });
+
+    // The ad lives in the container_ad div. At the top of this
+    // page, it was made invisible, now we can change the opacity
+    // to 100% and be sure it's set to display as a block level element
+    document.getElementById("container_ad").style.opacity = 1;
+    document.getElementById("container_ad").style.display = "block";
+  }
+
+  </script>
+</head>
+
+<body>
+  <div id="container_ad">
+    <div id="content_ad">
+      <a href="javascript:window.open(window.clickTag0)">
+      <div class="header">
+        <div class="logo-wrapper">          
+            <img id="logo" class="logo" src="logo.jpg" alt="{{title}}">          
+        </div>
+        <div class="title">
+          <span>Average</span>
+          <span class="er">ER</span>
+          <span> Wait Time</span>
+        </div>
+      </div>
+      </a>
+      <div class="er-wait-time">
+        <div class="er-wait-triangle"></div>
+        <div id="timedisplay" class="time-display feedloading" data-ertitle="{{ertitle}}">
+          <div id="wait-loading" class="loading">
+            <span></span><span></span><span></span>
+          </div>
+          <div id="waittime" class="time"></div>
+          <div class="mins"> minutes</div>
+          <div class="published">
+            <a href="javascript:window.open(window.clickTag1)">as of <span class="pubtime" id="pubdatetime"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+[
+		{
+			"title": "Tristar Skyline Medical Center",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"TriStar Skyline",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/47cb510a-b910-439d-8a9c-dd5cfae6096a/knockOutLogo",
+			"url" : "http://tristarskyline.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		},
+		{
+			"title": "TriStar Spring Hill ER",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"TriStar Spring Hill ER",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/ee886694-858b-465d-832e-20caf97009b4/knockOutLogo",
+			"url" : "http://tristarspringhiller.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		},
+		{
+			"title": "TriStar Summit Medical Center",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"TriStar Summit",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/1a422eb7-e155-4360-96b2-9e37e4698f39/knockOutLogo",
+			"url" : "http://tristarsummit.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		},
+		{
+			"title": "TriStar Stonecrest Medical Center",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"TriStar StoneCrest",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/f57db0bd-97b7-4c81-870f-04555558c5b2/knockOutLogo",
+			"url" : "http://tristarstonecrest.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		},
+		{
+			"title": "TriStar Hendersonville Medical Center",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"TriStar Hendersonville",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/492cde2a-f217-4b6a-b7b6-d9ae1543347c/knockOutLogo",
+			"url" : "http://tristarhendersonville.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		},
+		{
+			"title": "TriStar Portland ER",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"TriStar Portland ER",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/94b7bd31-a6f3-4779-8265-5253ed9c4101/knockOutLogo",
+			"url" : "http://tristarportland.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		},
+		{
+			"title": "Eastside Medical Center",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"Eastside",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/def99e4e-4bed-4268-b381-ce3e23f188c3/knockOutLogo",
+			"url" : "http://eastsidemedical.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		},
+		{
+			"title": "TriStar Greenview Regional Hospital",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"TriStar Greenview",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/e041c3c6-bdcd-4ee2-863f-be3acff4ab46/knockOutLogo",
+			"url" : "http://tristargreenviewregional.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		},
+		{
+			"title": "Parkridge Medical Center",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"Parkridge",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/3e172335-3648-4073-a8ca-d2b6c1e59220/knockOutLogo",
+			"url" : "http://parkridgemedicalcenter.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		},
+		{
+			"title": "Parkridge East Hospital",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"Parkridge East",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/56d23c7d-ee1c-4f96-b996-ec182d8dc7e6/knockOutLogo",
+			"url" : "http://parkridgeeasthospital.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		},
+		{
+			"title": "Redmond Regional Medical Center",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"Redmond",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/65780d85-505d-4f63-b64d-b4f81b5ff011/knockOutLogo",
+			"url" : "http://redmondregional.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		},
+		{
+			"title": "TriStar Centennial Medical Center",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"TriStar Centennial",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/2fd500fc-6ef2-45e8-a084-27fb5ba2cf7b/knockOutLogo",
+			"url" : "http://tristarcentennial.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		},
+		{
+			"title": "The Childrens Hospital at TriStar Centennial",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"TriStar Centennial",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/e8e393a7-54e3-45af-9629-01ad19c0a438/knockOutLogo",
+			"url" : "http://thechildrenshospitalnashville.com/",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot"
+		}
+	]

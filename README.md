@@ -1,2 +1,2 @@
 # tristar-banner
-Tristar DoubleClick Banner
+TriStar DoubleClick Banners
