@@ -121,7 +121,7 @@ body * {
       border-bottom-width: 9px;
       border-top-width: 9px;
       border-left: 9px solid $bannerBackColor;
-      margin-top: 14px;
+      margin-top: 7px;
       margin-left: -1px;
     }
     .time-display {
@@ -131,28 +131,34 @@ body * {
       width: 96px;
       text-align: center;
       .time {
+        display: inline-block;
         font-family: 'Orbitron', sans-serif;
-        font-size: 28px;
-        line-height: 28px;
-        height: 28px;
+        font-size: 24px;
+        line-height: 24px;
+        height: 24px;
         color: $erWaitTextColor;
       }
       .mins {
+        display: inline-block;
         font-size: 8px;
-        line-height: 8px;
-        height: 9px;
+        line-height: 9px;
+        height: 10px;
         font-weight: 700;
         text-transform: uppercase;
         color: $bannerTextColor;
       }
-      .published{
-        font-size: 6px;
-        line-height: 6px;
-        height: 7px;                
+      .published{        
+        font-size: 8px;
+        line-height: 9px;
+        height: 20px;                
         color: $bannerTextColor; 
-        a{
+        a{          
+          line-height: 9px;
           color: $bannerTextColor; 
           text-decoration: none;
+          span{          
+            line-height: 9px;
+          }
           &:hover{
             text-decoration: underline;
           }
@@ -160,6 +166,9 @@ body * {
       }
       &.feedloading {        
         .time {
+          display: none;
+        }
+        .mins{
           display: none;
         }
         .published{
