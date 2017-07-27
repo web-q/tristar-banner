@@ -26,6 +26,24 @@ bannerInit = function() {
   fetchWaitTimes();
 }
 
+formatDateTime = function(dateTimeText){
+  var dateTimeArray;
+  var timeArray;  
+  var hours;
+  var meridiem = 'am';
+  
+  dateTimeArray =  dateTimeText.split(' '); 
+  timeArray = dateTimeArray[dateTimeArray.length-2].split(':');  
+  hours = parseInt(timeArray[0] );
+  if (hours >= 12){    
+    meridiem = 'pm';
+    if (hours > 12){
+      hours -= 12;
+    }
+  }
+  return hours + ':' + timeArray[1] + meridiem;
+} 
+
 processFeedData = function(responseText) {
   try {
     var erWaitTimeMessage;
@@ -47,8 +65,8 @@ processFeedData = function(responseText) {
         if (waitTime.length == 1) {
           waitTime = '0' + waitTime;
         }
-        erWaitTime.innerHTML = waitTime;
-        erWaitPubDateTime.innerHTML = items[i].pubDate;
+        erWaitTime.innerHTML = waitTime;        
+        erWaitPubDateTime.innerHTML = formatDateTime(items[i].pubDate);
         erTimeDisplay.className = 'time-display';
         erWaitTimeMessage = 'ER Wait Time has been updated.';
       }
