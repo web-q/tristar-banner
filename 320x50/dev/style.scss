@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700');
+@import url('https://fonts.googleapis.com/css?family=News+Cycle:400,700');
 @charset "UTF-8";
 
 /* CSS Document */
@@ -132,25 +132,25 @@ body * {
       text-align: center;
       .time {
         display: inline-block;
-        font-family: 'Orbitron', sans-serif;
-        font-size: 24px;
-        line-height: 24px;
-        height: 24px;
+        font-family: 'News Cycle', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 30px;
+        height: 30px;
         color: $erWaitTextColor;
       }
       .mins {
         display: inline-block;
         font-size: 8px;
-        line-height: 9px;
-        height: 10px;
+        line-height: 9px;        
         font-weight: 700;
         text-transform: uppercase;
         color: $bannerTextColor;
       }
       .published{        
-        font-size: 8px;
+        font-size: 9px;
         line-height: 9px;
-        height: 20px;                
+        height: 14px;                
         color: $bannerTextColor; 
         a{          
           line-height: 9px;

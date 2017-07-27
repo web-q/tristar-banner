@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700');
+@import url('https://fonts.googleapis.com/css?family=News+Cycle:400,700');
 @charset "UTF-8";
 
 /* CSS Document */
@@ -128,10 +128,10 @@ body * {
       text-align: center;
       height: 88px;
       .time{
-        font-family: 'Orbitron', sans-serif;
+        font-family: 'News Cycle', sans-serif;
+        font-weight: bold;
         display: inline-block;
-        vertical-align: top;
-        margin-top: 5px;
+        vertical-align: top;        
         font-size: 64px;
         line-height: 64px;        
         color: $erWaitTextColor;
