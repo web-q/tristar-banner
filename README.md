@@ -1,5 +1,4 @@
-# tristar-banner
-TriStar DoubleClick Banners
+# TriStar DoubleClick Banners
 
 ## Prerequisites
 
