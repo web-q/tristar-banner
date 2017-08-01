@@ -13,7 +13,7 @@ Clone the GIT repository:
 
 "**git clone https://github.com/web-q/tristar-banner.git**"
 
-Select the banner:
+Change working directory to
 
  + [300x250](https://github.com/web-q/tristar-banner/tree/master/300x250 "300x250")
  + [320x50](https://github.com/web-q/tristar-banner/tree/master/300x250 "320x50")
