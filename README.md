@@ -8,9 +8,10 @@ node.js 6.x+
 
 ## Getting started
 
-Clone the GIT repository
+Clone the GIT repository:
 
-git clone https://github.com/web-q/tristar-banner.git
+
+"**git clone https://github.com/web-q/tristar-banner.git**"
 
 Select the banner:
 
