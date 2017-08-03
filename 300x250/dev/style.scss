@@ -6,7 +6,6 @@
 $bannerBackColor: #004990;
 $bannerTextColor: #ffffff;
 $erTextColor: #ff6347;
-$erWaitTextColor: #f22613;
 $erBackColor: #000000;
 
 html {
@@ -81,7 +80,7 @@ body, body * {
         font-weight: 700;
         margin-top: 15px;
         text-transform: uppercase;
-        color: $bannerTextColor;        
+        color: $erTextColor;        
       }
       span.er{                
         line-height: 36px;
@@ -117,7 +116,7 @@ body, body * {
         vertical-align: top;        
         font-size: 72px;
         line-height: 72px;        
-        color: $erWaitTextColor;
+        color: $erTextColor;
       }
       .mins{
         display: inline-block;

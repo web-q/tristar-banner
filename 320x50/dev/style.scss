@@ -7,7 +7,6 @@
 $bannerBackColor: #004990;
 $bannerTextColor: #ffffff;
 $erTextColor: #ff6347;
-$erWaitTextColor: #f22613;
 $erBackColor: #000000;
 
 html {
@@ -137,7 +136,7 @@ body * {
         font-size: 30px;
         line-height: 30px;
         height: 30px;
-        color: $erWaitTextColor;
+        color: $erTextColor;
       }
       .mins {
         display: inline-block;
