@@ -2,8 +2,9 @@
 // tristarDoubleClickBanner
 
 // Rename the archive that will be created here
-const archivePostfix = '300x250';
+const archivePostfix = '320x50';
 const imgFilter = '/filter/Resize/resize_h/44';
+const remoteFolder = 'P:/web-q-hospital.prod.ehc.com/global/webq/tristar-doubleclick-banner';
 
 // dependencies
 const gulp = require('gulp');
@@ -276,17 +277,18 @@ gulp.task('uglify', function() {
 
 });
 
-gulp.task('copy-assets-to-dist-folder', function() {  
+gulp.task('copy-to-remote-folder', function() {  
   var tasks = [];
-  for (var i = 0; i < facilities.length; i++) {
+  for (var i = 0; i < facilities.length; i++) {    
     var facility = facilities[i];    
     tasks.push(
-    gulp.src(['dev/**/*.mp4', 'dev/**/*.ogv', 'dev/**/*.ogg', 'dev/**/*.webm', 'dev/**/*.png', 'dev/**/*.jpg', 'dev/**/*.gif', 'dev/**/*.svg', '!dev/comp*'])            
-      .pipe(gulp.dest('dist/' + facility.folder))
-    );  
+      gulp.src('dist/**/*')        
+        .pipe(gulp.dest(remoteFolder + '/' + archivePostfix))
+    );      
   }
-  return mergeStream(tasks); 
+  return mergeStream(tasks);  
 });
+
 
 gulp.task('compress', function() {
   
@@ -306,6 +308,16 @@ gulp.task('compress', function() {
   return mergeStream(tasks);   
 
 });
+
+gulp.task('copyBackupFile', function() {
+  var sourceFiles = gulp.src(['backupImage/*.png', 'backupImage/*.jpg', 'backupImage/*.gif']);
+  return gulp.src(['backupImage/*.png', 'backupImage/*.jpg', 'backupImage/*.gif'])
+    .pipe(rename({
+      basename: archiveName + '-backup'
+    }))
+    .pipe(gulp.dest('delivery'));
+});
+
 
 gulp.task('archive', function() {
   // make a zip all the files, including dev folder, for archiving the banner
@@ -366,12 +378,23 @@ gulp.task('build', function(callback) {
     'sass:dist', 
     'handlebars:dist', 
     'minify-html', 
-    'uglify',
-    //'copy-assets-to-dist-folder',   
+    'uglify',    
     'compress',
     callback);
 });
 
+
+gulp.task('copy', function(callback) {  
+  runSequence(
+    'del', 
+    'download-image:dist',
+    'sass:dist', 
+    'handlebars:dist', 
+    'minify-html', 
+    'uglify',
+    'copy-to-remote-folder',
+    callback);
+});
 
 
 gulp.task('serve', function(callback) {
@@ -379,27 +402,20 @@ gulp.task('serve', function(callback) {
     callback);
 });
 
-gulp.task('copyBackupFile', function() {
-  var sourceFiles = gulp.src(['backupImage/*.png', 'backupImage/*.jpg', 'backupImage/*.gif']);
-  return gulp.src(['backupImage/*.png', 'backupImage/*.jpg', 'backupImage/*.gif'])
-    .pipe(rename({
-      basename: archiveName + '-backup'
-    }))
-    .pipe(gulp.dest('delivery'));
-});
+
+
 
 // Shortcut to build and archive all at once
 gulp.task('ba', function() { runSequence(['check'], ['build'], ['archive']) });
 
-gulp.task('help', function() {
-  gutil.log(gutil.colors.red('buildabanner'), 'help');
-  gutil.log('--------------------------');
-  gutil.log('There are 3 basic commands.');
+gulp.task('help', function() {  
+  gutil.log('There are 4 basic commands.');
   gutil.log(gutil.colors.yellow('gulp'), ': for dev use, spins up server w livereload as you edit files');
   gutil.log(gutil.colors.yellow('gulp build'), ': minifies files from the dev directory into the', gutil.colors.red('dist'), 'directory');
   gutil.log('and creates a zip of these files in', gutil.colors.red('delivery'), 'directory');
-  gutil.log(gutil.colors.yellow('gulp archive'), 'takes files from the ' + gutil.colors.red('dev'), 'directory' + ' plus other important files');
-  gutil.log('and zips them in the', gutil.colors.red('archive'), 'directory for archival purposes.');
+  gutil.log(gutil.colors.yellow('gulp copy'), ': copy the ', gutil.colors.red('dist'), 'directory to a remote folder.');  
+  gutil.log(gutil.colors.yellow('gulp archive'), ': takes files from the ' + gutil.colors.red('dev'), 'directory' + ' plus other important files');
+  gutil.log('and zips them in the', gutil.colors.red('archive'), 'directory for archival purposes. COMING SOON!');
   gutil.log('--------------------------');
 });
 
