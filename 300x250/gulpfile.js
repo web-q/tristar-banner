@@ -158,7 +158,9 @@ gulp.task('download-image:dist', function(){
   
 
 gulp.task('sass:dev', function() {
+  var facility = facilities[0];
   return gulp.src('dev/style.scss')
+    .pipe(header('$bannerBackColor: ' + facility.bgcolor + ';'))
     .pipe(sass({
       outputStyle: "expanded"
     }).on('error', sass.logError))
@@ -173,6 +175,7 @@ gulp.task('sass:dist', function() {
       var facility = facilities[i];
       tasks.push(
         gulp.src('dev/style.scss')
+          .pipe(header('$bannerBackColor: ' + facility.bgcolor + ';'))
           .pipe(sass({
             outputStyle: "compressed"
           }).on('error', sass.logError))
