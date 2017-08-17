@@ -62,21 +62,21 @@ body * {
   background-color: $bannerBackColor;
   .logo-wrapper {
     float: left;
-    padding: 2px;
+    padding: 4px;
     background-color: $bannerBackColor;
-    height: 44px;
-    width: 136px;
+    height: 40px;
+    width: 132px;
     font-size: 0;
     text-align: center;
     .logo-align {
       display: inline-block;
-      height: 44px;
+      height: 40px;
       vertical-align: middle;
     }
     .logo {
       display: inline-block;
       vertical-align: middle;
-      max-width: 136px;
+      max-width: 132px;
       max-height: 44px;
       &:hover {
         cursor: pointer;
@@ -85,10 +85,10 @@ body * {
   }
   .title {
     float: left;
-    padding: 2px;
+    padding: 4px;
     background-color: $bannerBackColor;
-    height: 44px;
-    width: 65px;
+    height: 40px;
+    width: 61px;
     text-align: center;
     span {
       display: block;
@@ -100,8 +100,8 @@ body * {
       color: $bannerTextColor;
     }
     span.er {
-      line-height: 24px;
-      font-size: 24px;
+      line-height: 20px;
+      font-size: 20px;
       font-weight: 700;
       color: $erTextColor;
     }
@@ -125,17 +125,17 @@ body * {
     }
     .time-display {
       float: left;
-      padding: 2px;
-      height: 44px;
-      width: 96px;
+      padding: 4px;
+      height: 40px;
+      width: 92px;
       text-align: center;
       .time {
         display: inline-block;
         font-family: 'News Cycle', sans-serif;
         font-weight: bold;
-        font-size: 30px;
-        line-height: 30px;
-        height: 30px;
+        font-size: 26px;
+        line-height: 26px;
+        height: 26px;
         color: $erTextColor;
       }
       .mins {

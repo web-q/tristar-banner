@@ -62,22 +62,22 @@ body * {
   background-color: $bannerBackColor;
   .logo-wrapper {
     float: left;
-    padding: 4px;
+    padding: 6px;
     background-color: $bannerBackColor;
-    height: 80px;
-    width: 360px;
+    height: 76px;
+    width: 356px;
     font-size: 0;
     text-align: center;
     .logo-align {
       display: inline-block;
-      height: 80px;
+      height: 76px;
       vertical-align: middle;
     }
     .logo {
       display: inline-block;
       vertical-align: middle;
-      max-width: 360px;
-      max-height: 80px;
+      max-width: 356px;
+      max-height: 76px;
       &:hover {
         cursor: pointer;
       }
@@ -85,10 +85,10 @@ body * {
   }
   .title {
     float: left;
-    padding: 4px;
+    padding: 6px;
     background-color: $bannerBackColor;
-    height: 80px;
-    width: 110px;
+    height: 76px;
+    width: 106px;
     text-align: center;
     span {
       display: block;
@@ -100,7 +100,7 @@ body * {
       color: $erTextColor;
     }
     span.er {
-      line-height: 40px;
+      line-height: 36px;
       font-size: 36px;
       font-weight: 700;
       color: $erTextColor;

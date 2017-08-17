@@ -3,7 +3,7 @@
 @charset "UTF-8";
 /* CSS Document */ 
 
-$bannerBackColor: #004990;
+/*$bannerBackColor: #004990;*/
 $bannerTextColor: #ffffff;
 $erTextColor: #ff6347;
 $erBackColor: #000000;
@@ -53,16 +53,16 @@ body, body * {
 	z-index: 100;
 	background: transparent; 
   .header{
-    width: 290px;
-    height: 120px;    
-    padding: 4px 4px 0 4px;
+    width: 286px;
+    height: 118px;    
+    padding: 6px 6px 0 6px;
     background-color: $bannerBackColor;
     .logo-wrapper{
-      width: 290px;
-      height: 70px;
+      width: 286px;
+      height: 68px;
       .logo{      
-        max-width: 290px;            
-        max-height: 70px;
+        max-width: 286px;            
+        max-height: 68px;
         display: block;    
         margin: 0 auto;
         &:hover{
@@ -94,9 +94,9 @@ body, body * {
   }
   .er-wait-time{
     background: $erBackColor;
-    width: 290px;
-    height: 120px;    
-    padding: 0 4px 4px 4px;
+    width: 286px;
+    height: 118px;    
+    padding: 0 6px 6px 6px;
     .er-wait-triangle{
       margin-left: 70px;
       width: 0;
@@ -108,7 +108,7 @@ body, body * {
     }
     .time-display{
       text-align: center;
-      height: 102px;
+      height: 100px;
       .time{
         font-family: 'News Cycle', sans-serif;
         font-weight: bold;
