@@ -112,6 +112,9 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"The Children's Hospital at TriStar Centennial",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/e8e393a7-54e3-45af-9629-01ad19c0a438/knockOutLogo",
+			"customLogo-300x250" : "",
+			"customLogo-320x50" : "",
+			"customLogo-728x90" : "",			
 			"url" : "http://thechildrenshospitalnashville.com/",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
