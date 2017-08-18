@@ -1,5 +1,15 @@
 [
 		{
+			"title": "TriStar Centennial Medical Center",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"TriStar Centennial",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/2fd500fc-6ef2-45e8-a084-27fb5ba2cf7b/knockOutLogo",
+			"customLogo": "tristar-centennial.png",
+			"url" : "http://tristarcentennial.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
+			"bgcolor":"#004990"
+		},
+		{
 			"title": "Tristar Skyline Medical Center",			
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"TriStar Skyline",
@@ -58,6 +68,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"Eastside",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/def99e4e-4bed-4268-b381-ce3e23f188c3/knockOutLogo",
+			"customLogo" : "eastside-medical.png",
 			"url" : "http://eastsidemedical.com",			
 			"disclaimer":"http://eastsidemedical.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#002c73"
@@ -99,22 +110,11 @@
 			"bgcolor":"#0067b1"
 		},
 		{
-			"title": "TriStar Centennial Medical Center",			
-			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
-			"ertitle":"TriStar Centennial",
-			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/2fd500fc-6ef2-45e8-a084-27fb5ba2cf7b/knockOutLogo",
-			"url" : "http://tristarcentennial.com",			
-			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
-			"bgcolor":"#004990"
-		},
-		{
 			"title": "The Children's Hospital at TriStar Centennial",			
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"The Children's Hospital at TriStar Centennial",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/e8e393a7-54e3-45af-9629-01ad19c0a438/knockOutLogo",
-			"customLogo-300x250" : "",
-			"customLogo-320x50" : "",
-			"customLogo-728x90" : "",			
+			"customLogo" : "childrens-hospital.png",
 			"url" : "http://thechildrenshospitalnashville.com/",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"

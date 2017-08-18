@@ -3,8 +3,9 @@
 
 // Rename the archive that will be created here
 const archivePostfix = '300x250';
-const imgFilter = '/filter/Resize/resize_h/70';
+const imgFilter = '/filter/Resize/resize_h/68';
 const remoteFolder = 'P:/web-q-hospital.prod.ehc.com/global/webq/tristar-doubleclick-banner';
+const gitURL = 'https://github.com/web-q/tristar-banner/raw/master/';
 
 // dependencies
 const gulp = require('gulp');
@@ -135,7 +136,13 @@ gulp.task('del', function() {
 });
 
 gulp.task('download-image:dev', function(){
-  return download(facilities[0].knockoutlogo + imgFilter)
+  var logoURL;
+  if(facilities[0].hasOwnProperty('customLogo') && facilities[0].customLogo !== ''){
+    logoURL = gitURL + archivePostfix + '/logo/' + facilities[0].customLogo;
+  }else{
+    logoURL = facilities[0].knockoutlogo + imgFilter;
+  }
+  return download(logoURL)
     .pipe(rename('logo.jpg'))
     .pipe(gulp.dest("dev"));
 });
@@ -143,11 +150,20 @@ gulp.task('download-image:dev', function(){
 
 gulp.task('download-image:dist', function(){
   var tasks = [];
+  var facility;
+  var logoURL;
+  var i;
 
-  for (var i = 0; i < facilities.length; i++) {   
-    var facility = facilities[i];
+  for (i = 0; i < facilities.length; i++) {   
+    facility = facilities[i];
+    logoURL;
+    if(facility.hasOwnProperty('customLogo') && facility.customLogo !== ''){
+      logoURL = gitURL + archivePostfix + '/logo/' + facility.customLogo;
+    }else{
+      logoURL = facility.knockoutlogo + imgFilter;
+    }
     tasks.push(
-      download(facility.knockoutlogo)
+      download(logoURL)
         .pipe(rename('logo.jpg'))
         .pipe(gulp.dest('dist/' + facility.folder))
     );
