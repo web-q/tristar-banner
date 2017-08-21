@@ -61,7 +61,7 @@
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/94b7bd31-a6f3-4779-8265-5253ed9c4101/knockOutLogo",
 			"url" : "http://tristarportland.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
-			"bgcolor":"#00376f"
+			"bgcolor":"#004990"
 		},
 		{
 			"title": "Eastside Medical Center",			
@@ -98,7 +98,7 @@
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/56d23c7d-ee1c-4f96-b996-ec182d8dc7e6/knockOutLogo",
 			"url" : "http://parkridgeeasthospital.com",			
 			"disclaimer":"http://parkridgeeasthospital.com/patients-visitors/er-wait-times-disclaimer.dot",
-			"bgcolor":"#004990"
+			"bgcolor":"#00376f"
 		},
 		{
 			"title": "Redmond Regional Medical Center",			
