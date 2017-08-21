@@ -1,15 +1,5 @@
 [
 		{
-			"title": "TriStar Centennial Medical Center",			
-			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
-			"ertitle":"TriStar Centennial",
-			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/2fd500fc-6ef2-45e8-a084-27fb5ba2cf7b/knockOutLogo",
-			"customLogo": "tristar-centennial.png",
-			"url" : "http://tristarcentennial.com",			
-			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
-			"bgcolor":"#004990"
-		},
-		{
 			"title": "Tristar Skyline Medical Center",			
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"TriStar Skyline",
@@ -18,6 +8,16 @@
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
 		},
+		{
+			"title": "TriStar Centennial Medical Center",			
+			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+			"ertitle":"TriStar Centennial",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/2fd500fc-6ef2-45e8-a084-27fb5ba2cf7b/knockOutLogo",
+			"customLogo": "tristar-centennial.png",
+			"url" : "http://tristarcentennial.com",			
+			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
+			"bgcolor":"#004990"
+		},		
 		{
 			"title": "TriStar Spring Hill ER",			
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",

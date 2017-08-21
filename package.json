@@ -1,7 +1,6 @@
 {
   "name": "tristarDoubleClickBanner",
-  "version": "1.0.0",
-  "bannerSize": "300x250",
+  "version": "1.0.0",  
   "description": "Tristar Double Click Banner Template",
   "main": "index.html",
   "keywords": [

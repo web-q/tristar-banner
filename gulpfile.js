@@ -2,8 +2,22 @@
 // tristarDoubleClickBanner
 
 // Rename the archive that will be created here
+const adParameters = [
+  {
+    'id': '300x250',
+    'imgFilter': '/filter/Resize/resize_h/68'
+   }, 
+  {
+    'id': '320x50',
+    'imgFilter': '/filter/Resize/resize_h/40'
+  }, 
+  {
+    'id': '728x90',
+    'imgFilter': '/filter/Resize/resize_h/76'
+  }
+];
+
 const archivePostfix = '300x250';
-const imgFilter = '/filter/Resize/resize_h/68';
 const remoteFolder = 'P:/web-q-hospital.prod.ehc.com/global/webq/tristar-doubleclick-banner';
 const gitURL = 'https://github.com/web-q/tristar-banner/raw/master/';
 
@@ -30,18 +44,37 @@ const sizeOf = require('image-size');
 const size = require('gulp-size');
 const download = require("gulp-download"); 
 const notify = require("gulp-notify");
-
 const fs = require('fs');
+
+// search for --size parameter, 
+// if parameter doesn't exist process all sizes
+var currentConfig = [];
+var currentSize;
+var  sizeParam = gutil.env.size;
+if(sizeParam !== undefined && sizeParam !== true){  
+  var conf = adParameters.find(o => o.id === sizeParam);
+  if(conf === undefined){    
+    gutil.log('Size '+ currentSize + ' does not exist.');
+    process.exit();
+  }else{
+    currentSize = sizeParam;
+    currentConfig.push(conf);    
+  }    
+}else{
+  currentSize = "all";
+  currentConfig = adParameters;
+}
 
 // read in the package file
 const pkg = require('./package.json');
 
-// read int the facilities feed
-const facilities = require('../facilities-feed.json');
-// add foolder field to facilities
+// read the facilities feed
+const facilities = require('./facilities-feed.json');
+// add folder field to facilities
 for (var i = 0; i < facilities.length; i++) {  
-  facilities[i].folder =  facilities[i].title.replace(/ +/g, '-').toLowerCase()  
+  facilities[i].folder =  facilities[i].title.replace(/ +/g, '-').replace(/' +/g, '').toLowerCase();  
 }
+
 
 // Banner message to be appended to minified files
 const nowDate = new Date();
@@ -64,169 +97,128 @@ const bannerMessageJsCss = ['/**',
 
 // TASKS
 
-// CHECK task - reading index.html and then check the meta tag for size
 
-gulp.task('check', function() {
-  gutil.log(gutil.colors.yellow('******************************'));
-  gutil.log(gutil.colors.yellow('* Checking for banner errors *'));
-  gutil.log(gutil.colors.yellow('******************************'));
-  gutil.log(gutil.colors.yellow('* Scanning: ') + gutil.colors.green('index.html') + gutil.colors.yellow(' for ad.size metadata *'));
-
-  // Read the index.html file in the dev folder
-  fs.readFile('dev/index.html', 'utf8', function(err, theFileContents) {
-    if (err) {
-      gutil.log(gutil.colors.red('*** metadata ad.size validation error encountered ***'));
-      gutil.log(gutil.colors.red(err));
-    }
-    var adSizeMetaData;
-    var parser = new htmlparser.Parser({
-      onopentag: function(name, attribs) {
-        //gutil.log('opentag');
-        if (name === "meta" && attribs.name === 'ad.size') {
-          gutil.log(gutil.colors.yellow('* Found ad.size metadata: ') + gutil.colors.green(attribs.content));
-          adSizeMetaData = attribs.content
-          //gutil.log(attribs.content);
-        }
-      },
-      ontext: function(text) {
-        //console.log("-->", text);
-      },
-    }, { decodeEntities: true, recognizeSelfClosing: true });
-    parser.write(theFileContents);
-    parser.end();
-
-    if (adSizeMetaData) {
-      //gutil.log('adSizeMetaData: ' + adSizeMetaData)
-    } else {
-      gutil.log(gutil.colors.red("ERROR: The metadata ad.size was not found in dev\/index.html"))
-    }
-    // Get a list of files in the backupImage directory
-    var backupImages = fs.readdirSync('backupImage/');
-    // remove invisible files from list, ie. .DS_Store
-    backupImages = backupImages.filter(item => !(/(^|\/)\.[^\/\.]/g).test(item));
-
-    if (backupImages.length === 1) {
-      // if there is the expected 1 file, let's proceed
-      var expectedDimensions = sizeOf('backupImage/' + backupImages[0]);
-      var expectedDimensionsFormatted = 'width=' + expectedDimensions.width + ',height=' + expectedDimensions.height;
-      gutil.log('expected: ' + expectedDimensionsFormatted);
-      if (expectedDimensionsFormatted === adSizeMetaData) {
-        gutil.log(gutil.colors.green("SUCCESS: The metadata ad.size matched the dimensions of the backup image."));
-      } else {
-        gutil.log(gutil.colors.red("ERROR: The metadata ad.size did not match the dimensions of the backup image."))
-        gutil.log('expected: ' + gutil.colors.red(expectedDimensionsFormatted))
-        gutil.log('found   : ' + gutil.colors.red(adSizeMetaData))
-      }
-
-    } else {
-      gutil.log(gutil.colors.red("ERROR: Expected 1 image in backupImage directory but found " + backupImages.length))
-
-    }
-
-  });
-
-})
-
-gulp.task('del', function() {
-  del([
-    'dist/*',
-    'delivery/*',
-    'archive/*'
-  ])
-});
-
-gulp.task('download-image:dev', function(){
-  var logoURL;
+gulp.task('download-image:dev', function(){  
+  var logoURL;  
   if(facilities[0].hasOwnProperty('customLogo') && facilities[0].customLogo !== ''){
     logoURL = gitURL + archivePostfix + '/logo/' + facilities[0].customLogo;
   }else{
-    logoURL = facilities[0].knockoutlogo + imgFilter;
-  }
+    logoURL = facilities[0].knockoutlogo + currentConfig[0].imgFilter;
+  }  
   return download(logoURL)
     .pipe(rename('logo.jpg'))
-    .pipe(gulp.dest("dev"));
+    .pipe(gulp.dest(currentSize + "/dev"));  
 });
 
+gulp.task('sass:dev', function() {
+  return gulp.src(currentSize + '/dev/style.scss')
+    .pipe(header('$bannerBackColor: ' + facilities[0].bgcolor + ';'))
+    .pipe(sass({
+      outputStyle: "expanded"
+    }).on('error', sass.logError))
+    .pipe(rename('style.css'))
+    .pipe(gulp.dest(currentSize + '/dev'));
+});
+
+gulp.task('handlebars:dev', function() {
+  var facility = facilities[0];
+  return gulp.src(currentSize + '/dev/index.handlebars')
+    .pipe(handlebars(facility))
+    .pipe(rename('index.html'))
+    .pipe(gulp.dest(currentSize +'/dev'));
+});
+
+gulp.task('del', function() {
+  var i;
+  for (i = 0; i < currentConfig.length; i++){
+    gutil.log('Deleting ' + currentConfig[i].id + '...');
+    del([
+      currentConfig[i].id + '/dist/*',
+      currentConfig[i].id + '/delivery/*',
+      currentConfig[i].id + '/archive/*'
+    ]);
+  }  
+});
 
 gulp.task('download-image:dist', function(){
   var tasks = [];
   var facility;
   var logoURL;
   var i;
+  var j;
 
-  for (i = 0; i < facilities.length; i++) {   
-    facility = facilities[i];
-    logoURL;
-    if(facility.hasOwnProperty('customLogo') && facility.customLogo !== ''){
-      logoURL = gitURL + archivePostfix + '/logo/' + facility.customLogo;
-    }else{
-      logoURL = facility.knockoutlogo + imgFilter;
+  for (j = 0; j < currentConfig.length; j++) {   
+
+    for (i = 0; i < facilities.length; i++) {   
+      facility = facilities[i];
+      logoURL;
+      if(facility.hasOwnProperty('customLogo') && facility.customLogo !== ''){
+        logoURL = gitURL + currentConfig[j].id + '/logo/' + facility.customLogo;
+      }else{
+        logoURL = facility.knockoutlogo + currentConfig[j].imgFilter;
+      }
+      tasks.push(
+        download(logoURL)
+          .pipe(rename('logo.jpg'))
+          .pipe(gulp.dest(currentConfig[j].id + '/dist/' + facility.folder))
+      );
     }
-    tasks.push(
-      download(logoURL)
-        .pipe(rename('logo.jpg'))
-        .pipe(gulp.dest('dist/' + facility.folder))
-    );
+
   }
           
   return mergeStream(tasks);       
 });
   
-
-gulp.task('sass:dev', function() {
-  var facility = facilities[0];
-  return gulp.src('dev/style.scss')
-    .pipe(header('$bannerBackColor: ' + facility.bgcolor + ';'))
-    .pipe(sass({
-      outputStyle: "expanded"
-    }).on('error', sass.logError))
-    .pipe(rename('style.css'))
-    .pipe(gulp.dest('dev'));
-});
-
 gulp.task('sass:dist', function() {
   
     var tasks = [];
-    for (var i = 0; i < facilities.length; i++) {   
-      var facility = facilities[i];
-      tasks.push(
-        gulp.src('dev/style.scss')
-          .pipe(header('$bannerBackColor: ' + facility.bgcolor + ';'))
-          .pipe(sass({
-            outputStyle: "compressed"
-          }).on('error', sass.logError))
-          .pipe(header(bannerMessageJsCss, {
-            pkg: pkg,
-            facilityName: facility.title,
-            archivePostfix: archivePostfix
-          }))
-          .pipe(rename('style.css'))          
-          .pipe(gulp.dest('dist/' + facility.folder ))      
-      );    
-    }
-    return mergeStream(tasks); 
-  
-});
+    var facility;
+    var i;
+    var j;
 
-gulp.task('handlebars:dev', function() {
-  var facility = facilities[0];
-  return gulp.src('dev/index.handlebars')
-    .pipe(handlebars(facility))
-    .pipe(rename('index.html'))
-    .pipe(gulp.dest('dev'));
+    for (j = 0; j < currentConfig.length; j++) {
+
+      for (i = 0; i < facilities.length; i++) {   
+        facility = facilities[i];
+        tasks.push(
+          gulp.src(currentConfig[j].id + '/dev/style.scss')
+            .pipe(header('$bannerBackColor: ' + facility.bgcolor + ';'))
+            .pipe(sass({
+              outputStyle: "compressed"
+            }).on('error', sass.logError))
+            .pipe(header(bannerMessageJsCss, {
+              pkg: pkg,
+              facilityName: facility.title,
+              archivePostfix: archivePostfix
+            }))
+            .pipe(rename('style.css'))          
+            .pipe(gulp.dest(currentConfig[j].id + '/dist/' + facility.folder ))      
+        );    
+      }
+
+    }
+
+    return mergeStream(tasks);   
 });
 
 gulp.task('handlebars:dist', function() {
   var tasks = [];
-  for (var i = 0; i < facilities.length; i++) {    
-    var facility = facilities[i];    
-    tasks.push(
-      gulp.src('dev/index.handlebars')
-        .pipe(handlebars(facility))
-        .pipe(rename('index.html'))
-        .pipe(gulp.dest('dist/' + facility.folder ))
-    );      
+  var facility;
+  var i;
+  var j;
+
+  for (j = 0; j < currentConfig.length; j++) {
+    for (i = 0; i < facilities.length; i++) {    
+      facility = facilities[i];    
+      tasks.push(
+        gulp.src(currentConfig[j].id + '/dev/index.handlebars')
+          .pipe(handlebars(facility))
+          .pipe(rename('index.html'))
+          .pipe(gulp.dest(currentConfig[j].id + '/dist/' + facility.folder ))
+      );      
+    }
   }
+
   return mergeStream(tasks);  
 });
 
@@ -245,21 +237,26 @@ gulp.task('minify-html', function() {
   var consoleRegEx = /console\.(clear|count|debug|dir|dirxml|error|group|groupCollapsed|groupEnd|info|profile|profileEnd|time|timeEnd|timeStamp|trace|log|warn) *\(.*\);?/gi;
 
   var tasks = [];
-  for (var i = 0; i < facilities.length; i++) {
-    var facility = facilities[i];        
-    tasks.push(
-      gulp.src('dist/' + facility.folder + '/index.html')      
-        .pipe(replace(consoleRegEx, ''))
-        .pipe(minifyHTML(opts))      
-        .pipe(header(bannerMessageHtml, {
-          pkg: pkg,
-          facilityName : facility.title,
-          archivePostfix: archivePostfix
-        }))          
-        .pipe(gulp.dest('dist/' + facility.folder))        
-    );
-  }
+  var facility;
+  var i;
+  var j;
 
+  for (j = 0; j < currentConfig.length; j++) {
+    for (i = 0; i < facilities.length; i++) {
+      facility = facilities[i];        
+      tasks.push(
+        gulp.src(currentConfig[j].id + '/dist/' + facility.folder + '/index.html')      
+          .pipe(replace(consoleRegEx, ''))
+          .pipe(minifyHTML(opts))      
+          .pipe(header(bannerMessageHtml, {
+            pkg: pkg,
+            facilityName : facility.title,
+            archivePostfix: currentConfig[j].id
+          }))          
+          .pipe(gulp.dest(currentConfig[j].id + '/dist/' + facility.folder))        
+      );
+    }
+  }
   return mergeStream(tasks); 
 });
 
@@ -278,33 +275,46 @@ gulp.task('uglify', function() {
   };
 
   var tasks = [];
+  var facility;
+  var i;
+  var j;
+
+  for (j = 0; j < currentConfig.length; j++) {
     for (var i = 0; i < facilities.length; i++) {   
       var facility = facilities[i];
       tasks.push(
-        gulp.src('dev/script.js')
+        gulp.src(currentConfig[j].id + '/dev/script.js')
           .pipe(uglify(opt))
           .pipe(rename('script.js'))
           .pipe(header(bannerMessageJsCss, {
             pkg: pkg,
             facilityName: facility.title,
-            archivePostfix: archivePostfix
+            archivePostfix: currentConfig[j].id 
           }))
-          .pipe(gulp.dest('dist/' + facility.folder))
+          .pipe(gulp.dest(currentConfig[j].id + '/dist/' + facility.folder))
       );    
     }
-    return mergeStream(tasks); 
+  }
+  return mergeStream(tasks); 
 
 });
 
 gulp.task('copy-to-remote-folder', function() {  
   var tasks = [];
-  for (var i = 0; i < facilities.length; i++) {    
-    var facility = facilities[i];    
-    tasks.push(
-      gulp.src('dist/**/*')        
-        .pipe(gulp.dest(remoteFolder + '/' + archivePostfix))
-    );      
+  var facility;
+  var i;
+  var j;
+
+  for (j = 0; j < currentConfig.length; j++) {
+    for (var i = 0; i < facilities.length; i++) {    
+      var facility = facilities[i];    
+      tasks.push(
+        gulp.src(currentConfig[j].id + '/dist/**/*')        
+          .pipe(gulp.dest(remoteFolder + '/' + currentConfig[j].id))
+      );      
+    }
   }
+
   return mergeStream(tasks);  
 });
 
@@ -314,15 +324,20 @@ gulp.task('compress', function() {
   const s = size({ showFiles: false, gzip: false, showTotal: false });
 
   var tasks = [];
+  var facility;
+  var i;
+  var j;
   
-  for (var i = 0; i < facilities.length; i++) {   
-    var facility = facilities[i];
-    tasks.push(
-      gulp.src('dist/' + facility.folder + '/*')        
-      .pipe(zip(facility.folder + '-' + archivePostfix + '.zip'))
-      //.pipe(s)
-      .pipe(gulp.dest('delivery'))
-    );    
+  for (j = 0; j < currentConfig.length; j++) {
+    for (var i = 0; i < facilities.length; i++) {   
+      var facility = facilities[i];
+      tasks.push(
+        gulp.src(currentConfig[j].id + '/dist/' + facility.folder + '/*')        
+        .pipe(zip(facility.folder + '-' + currentConfig[j].id + '.zip'))
+        //.pipe(s)
+        .pipe(gulp.dest(currentConfig[j].id + '/delivery'))
+      );    
+    }
   }
   return mergeStream(tasks);   
 
@@ -339,23 +354,29 @@ gulp.task('copyBackupFile', function() {
 
 
 gulp.task('archive', function() {
-  // make a zip all the files, including dev folder, for archiving the banner
-  var success = gulp.src(['gulpfile.js', 'package.json', '*.sublime-project', 'dev/**/*', 'dist/**/*', 'backupImage/*', 'delivery/**/*'], { cwdbase: true })
-    // for quick access, you can change this
-    // name at the top of this file
-    .pipe(zip('archive-' + archivePostfix + '.zip'))
-    .pipe(gulp.dest('archive'));
-  gutil.log('--------------------------------');
-  gutil.log('Your banner has been archived in');
-  gutil.log('archive/' + gutil.colors.yellow('archive-' + archiveName + '.zip'));
-  gutil.log('--------------------------------');
-  return success;
+  const s = size({ showFiles: false, gzip: false, showTotal: false });
+
+  var tasks = [];
+  
+  var i;
+  
+  
+  for (j = 0; j < currentConfig.length; j++) {  
+      tasks.push(
+        gulp.src(currentConfig[j].id + '/delivery/*')        
+        .pipe(zip('./' + currentConfig[j].id + '.zip'))
+        //.pipe(s)
+        .pipe(gulp.dest('./'))
+      );        
+  }
+  return mergeStream(tasks);   
+
 });
 
 
 gulp.task('connect', function() {
   connect.server({
-    root: ['dev'],
+    root: [currentSize + '/dev'],
     port: 8889,
     livereload: true,
     //livereload: { port: '9999' }
@@ -382,10 +403,10 @@ gulp.task('basic-reload', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['dev/*.html', 'dev/*.js'], ['basic-reload']);
-  gulp.watch(['dev/*.scss'], ['sass:dev']);
-  gulp.watch(['dev/*.handlebars'], ['handlebars:dev']);
-  gulp.watch(['dev/*.css'], ['basic-reload']);
+  gulp.watch([currentSize + '/dev/*.html', currentSize + '/dev/*.js'], ['basic-reload']);
+  gulp.watch([currentSize + '/dev/*.scss'], ['sass:dev']);
+  gulp.watch([currentSize + '/dev/*.handlebars'], ['handlebars:dev']);
+  gulp.watch([currentSize + '/dev/*.css'], ['basic-reload']);
 });
 
 
@@ -417,8 +438,12 @@ gulp.task('copy', function(callback) {
 
 
 gulp.task('serve', function(callback) {
-  runSequence('download-image:dev','sass:dev', 'handlebars:dev', ['connect'], ['open', 'watch'],
-    callback);
+  if(currentSize !== 'all'){
+    runSequence('download-image:dev','sass:dev', 'handlebars:dev', ['connect'], ['open', 'watch'],
+      callback);
+  }else{
+    gutil.log('Please use "--size " parameter');
+  }
 });
 
 
