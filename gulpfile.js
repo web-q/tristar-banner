@@ -72,7 +72,7 @@ const pkg = require('./package.json');
 const facilities = require('./facilities-feed.json');
 // add folder field to facilities
 for (var i = 0; i < facilities.length; i++) {  
-  facilities[i].folder =  facilities[i].title.replace(/ +/g, '-').replace(/' +/g, '').toLowerCase();  
+  facilities[i].folder =  facilities[i].title.replace(/ +/g, '-').toLowerCase();  
 }
 
 
@@ -356,11 +356,9 @@ gulp.task('copyBackupFile', function() {
 gulp.task('archive', function() {
   const s = size({ showFiles: false, gzip: false, showTotal: false });
 
-  var tasks = [];
-  
+  var tasks = [];  
   var i;
-  
-  
+    
   for (j = 0; j < currentConfig.length; j++) {  
       tasks.push(
         gulp.src(currentConfig[j].id + '/delivery/*')        
@@ -398,7 +396,7 @@ gulp.task('open', function() {
 
 
 gulp.task('basic-reload', function() {
-  gulp.src('dev')
+  gulp.src(currentSize + '/dev')
     .pipe(connect.reload());
 });
 
