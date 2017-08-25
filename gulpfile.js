@@ -69,7 +69,7 @@ if(sizeParam !== undefined && sizeParam !== true){
 const pkg = require('./package.json');
 
 // read the facilities feed
-const facilities = require('./facilities-feed.json');
+var facilities = require('./facilities-feed.json');
 // add folder field to facilities
 for (var i = 0; i < facilities.length; i++) {  
   facilities[i].folder =  facilities[i].title.replace(/ +/g, '-').toLowerCase();  
@@ -395,6 +395,16 @@ gulp.task('open', function() {
 });
 
 
+gulp.task('config-reload', function() {
+  //delete require cache
+  delete require.cache[require.resolve('./facilities-feed.json')];  
+  //reload facilities-feed
+  facilities = require('./facilities-feed.json');  
+  for (var i = 0; i < facilities.length; i++) {  
+    facilities[i].folder =  facilities[i].title.replace(/ +/g, '-').toLowerCase();  
+  }  
+});
+
 gulp.task('basic-reload', function() {
   gulp.src(currentSize + '/dev')
     .pipe(connect.reload());
@@ -405,6 +415,7 @@ gulp.task('watch', function() {
   gulp.watch([currentSize + '/dev/*.scss'], ['sass:dev']);
   gulp.watch([currentSize + '/dev/*.handlebars'], ['handlebars:dev']);
   gulp.watch([currentSize + '/dev/*.css'], ['basic-reload']);
+  gulp.watch(['facilities-feed.json'], ['config-reload', 'sass:dev','handlebars:dev','basic-reload']);
 });
 
 
