@@ -4,6 +4,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"TriStar Skyline",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/47cb510a-b910-439d-8a9c-dd5cfae6096a/knockOutLogo",
+			"customLogo320x50": "tristar-skyline.png",
 			"url" : "http://tristarskyline.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
