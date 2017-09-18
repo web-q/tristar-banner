@@ -17,7 +17,6 @@ const adParameters = [
   }
 ];
 
-const archivePostfix = '300x250';
 const remoteFolder = 'P:/web-q-hospital.prod.ehc.com/global/webq/tristar-doubleclick-banner';
 const gitURL = 'https://github.com/web-q/tristar-banner/raw/master/';
 
@@ -106,7 +105,7 @@ gulp.task('download-image:dev', function(){
     logoURL = facilities[0].knockoutlogo + currentConfig[0].imgFilter;
   }  
   return download(logoURL)
-    .pipe(rename('logo.jpg'))
+    .pipe(rename('logo.png'))
     .pipe(gulp.dest(currentSize + "/dev"));  
 });
 
@@ -151,15 +150,16 @@ gulp.task('download-image:dist', function(){
 
     for (i = 0; i < facilities.length; i++) {   
       facility = facilities[i];
-      logoURL;
-      if(facility.hasOwnProperty('customLogo') && facility.customLogo !== ''){
-        logoURL = gitURL + currentConfig[j].id + '/logo/' + facility.customLogo;
+      logoURL;      
+
+      if(facility.hasOwnProperty('customLogo' + currentConfig[j].id) && facility['customLogo' + currentConfig[j].id] !== ''){        
+        logoURL = gitURL + currentConfig[j].id + '/logo/' + facility['customLogo' + currentConfig[j].id];        
       }else{
         logoURL = facility.knockoutlogo + currentConfig[j].imgFilter;
       }
       tasks.push(
         download(logoURL)
-          .pipe(rename('logo.jpg'))
+          .pipe(rename('logo.png'))
           .pipe(gulp.dest(currentConfig[j].id + '/dist/' + facility.folder))
       );
     }
@@ -189,7 +189,7 @@ gulp.task('sass:dist', function() {
             .pipe(header(bannerMessageJsCss, {
               pkg: pkg,
               facilityName: facility.title,
-              archivePostfix: archivePostfix
+              archivePostfix: currentSize
             }))
             .pipe(rename('style.css'))          
             .pipe(gulp.dest(currentConfig[j].id + '/dist/' + facility.folder ))      

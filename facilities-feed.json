@@ -13,8 +13,8 @@
 			"title": "TriStar Centennial Medical Center",			
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"TriStar Centennial",
-			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/2fd500fc-6ef2-45e8-a084-27fb5ba2cf7b/knockOutLogo",
-			"customLogo": "tristar-centennial.png",
+			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/2fd500fc-6ef2-45e8-a084-27fb5ba2cf7b/knockOutLogo",			
+			"customLogo320x50": "tristar-centennial.png",
 			"url" : "http://tristarcentennial.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -24,6 +24,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"TriStar Spring Hill ER",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/ee886694-858b-465d-832e-20caf97009b4/knockOutLogo",
+			"customLogo320x50": "tristar-spring-hill.png",
 			"url" : "http://tristarspringhiller.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -33,6 +34,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"TriStar Summit",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/1a422eb7-e155-4360-96b2-9e37e4698f39/knockOutLogo",
+			"customLogo320x50": "tristar-summit.png",
 			"url" : "http://tristarsummit.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -42,6 +44,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"TriStar StoneCrest",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/f57db0bd-97b7-4c81-870f-04555558c5b2/knockOutLogo",
+			"customLogo320x50": "tristar-stonecrest.png",
 			"url" : "http://tristarstonecrest.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -51,6 +54,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"TriStar Hendersonville",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/492cde2a-f217-4b6a-b7b6-d9ae1543347c/knockOutLogo",
+			"customLogo320x50": "tristar-hendersonville.png",
 			"url" : "http://tristarhendersonville.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -60,6 +64,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"TriStar Portland ER",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/94b7bd31-a6f3-4779-8265-5253ed9c4101/knockOutLogo",
+			"customLogo320x50": "tristar-portland-er.png",
 			"url" : "http://tristarportland.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -69,7 +74,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"Eastside",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/def99e4e-4bed-4268-b381-ce3e23f188c3/knockOutLogo",
-			"customLogo" : "eastside-medical.png",
+			"customLogo320x50": "eastside-medical.png",
 			"url" : "http://eastsidemedical.com",			
 			"disclaimer":"http://eastsidemedical.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#0e3775"
@@ -79,6 +84,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"TriStar Greenview",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/e041c3c6-bdcd-4ee2-863f-be3acff4ab46/knockOutLogo",
+			"customLogo320x50": "tristar-greenview.png",
 			"url" : "http://tristargreenviewregional.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -88,6 +94,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"Parkridge",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/3e172335-3648-4073-a8ca-d2b6c1e59220/knockOutLogo",
+			"customLogo320x50": "parkridge-medical.png",
 			"url" : "http://parkridgemedicalcenter.com",			
 			"disclaimer":"http://parkridgemedicalcenter.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#00376f"
@@ -97,6 +104,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"Parkridge East",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/56d23c7d-ee1c-4f96-b996-ec182d8dc7e6/knockOutLogo",
+			"customLogo320x50": "parkridge-east.png",
 			"url" : "http://parkridgeeasthospital.com",			
 			"disclaimer":"http://parkridgeeasthospital.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#00376f"
@@ -106,6 +114,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"Redmond",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/65780d85-505d-4f63-b64d-b4f81b5ff011/knockOutLogo",
+			"customLogo320x50": "redmond-regional.png",
 			"url" : "http://redmondregional.com",			
 			"disclaimer":"http://redmondregional.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -115,7 +124,7 @@
 			"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
 			"ertitle":"The Children's Hospital at TriStar Centennial",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/e8e393a7-54e3-45af-9629-01ad19c0a438/knockOutLogo",
-			"customLogo" : "childrens-hospital.png",
+			"customLogo320x50": "childrens-hospital.png",
 			"url" : "http://thechildrenshospitalnashville.com/",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
