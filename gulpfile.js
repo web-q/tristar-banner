@@ -101,7 +101,7 @@ const bannerMessageJsCss = ['/**',
 gulp.task('download-image:dev', function(){  
   var logoURL;  
   if(facilities[0].hasOwnProperty('customLogo' + currentSize) && facilities[0]['customLogo' + currentSize] !== ''){
-    logoURL = gitURL + currentSize + '/logo/' + facilities[0].customLogo;
+    logoURL = gitURL + currentSize + '/logo/' + facilities[0]['customLogo' + currentSize];
   }else{
     logoURL = facilities[0].knockoutlogo + currentConfig[0].imgFilter;
   }  
