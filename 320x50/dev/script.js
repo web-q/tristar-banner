@@ -28,11 +28,13 @@ bannerInit = function() {
 
 formatDateTime = function(dateTimeText){
   var dateTimeArray;
-  var timeArray;  
+  var timeArray;
+  var timeZone;
   var hours;
   var meridiem = 'am';
   
-  dateTimeArray =  dateTimeText.split(' '); 
+  dateTimeArray =  dateTimeText.split(' ');
+  timeZone =  dateTimeArray[dateTimeArray.length-1];
   timeArray = dateTimeArray[dateTimeArray.length-2].split(':');  
   hours = parseInt(timeArray[0] );
   if (hours >= 12){    
@@ -41,7 +43,7 @@ formatDateTime = function(dateTimeText){
       hours -= 12;
     }
   }
-  return hours + ':' + timeArray[1] + meridiem;
+  return hours + ':' + timeArray[1] + meridiem + ' ' + timeZone;
 } 
 
 processFeedData = function(responseText) {

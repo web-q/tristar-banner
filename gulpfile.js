@@ -264,16 +264,16 @@ gulp.task('minify-html', function() {
 gulp.task('uglify', function() {
 
   var opt = {
-    mangle: true, // make shorter variable names
+    mangle: true, // make shorter variable names    
     compress: {
       drop_debugger: true, // drop debugger messages from code
       drop_console: true // drop console messages from code
     },
     output: {
-      beautify: false // make code pretty? default is false
+      beautify: false // make code pretty? default is false    
     }
   };
-
+  
   var tasks = [];
   var facility;
   var i;

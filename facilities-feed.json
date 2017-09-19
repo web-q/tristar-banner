@@ -15,6 +15,8 @@
 			"ertitle":"TriStar Centennial",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/2fd500fc-6ef2-45e8-a084-27fb5ba2cf7b/knockOutLogo",			
 			"customLogo320x50": "tristar-centennial.png",
+			"customLogo300x250": "tristar-centennial.png",
+			"customLogo728x90": "tristar-centennial.png",
 			"url" : "http://tristarcentennial.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -75,6 +77,8 @@
 			"ertitle":"Eastside",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/def99e4e-4bed-4268-b381-ce3e23f188c3/knockOutLogo",
 			"customLogo320x50": "eastside-medical.png",
+			"customLogo300x250": "eastside-medical.png",
+			"customLogo728x90": "eastside-medical.png",
 			"url" : "http://eastsidemedical.com",			
 			"disclaimer":"http://eastsidemedical.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#0e3775"
@@ -125,6 +129,8 @@
 			"ertitle":"The Children's Hospital at TriStar Centennial",
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/e8e393a7-54e3-45af-9629-01ad19c0a438/knockOutLogo",
 			"customLogo320x50": "childrens-hospital.png",
+			"customLogo300x250": "childrens-hospital.png",
+			"customLogo728x90": "childrens-hospital.png",
 			"url" : "http://thechildrenshospitalnashville.com/",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"

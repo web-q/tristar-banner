@@ -88,7 +88,7 @@ body * {
     padding: 4px;
     background-color: $bannerBackColor;
     height: 40px;
-    width: 61px;
+    width: 53px;
     text-align: center;
     span {
       display: block;
@@ -97,7 +97,7 @@ body * {
       font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
-      color: $bannerTextColor;
+      color: $erTextColor;
     }
     span.er {
       line-height: 20px;
@@ -109,7 +109,7 @@ body * {
   .time-display-wrap {
     float: left;
     height: 48px;
-    width: 109px;
+    width: 117px;
     text-align: center;
     background-color: $erBackColor;
     .er-wait-triangle {
@@ -125,9 +125,9 @@ body * {
     }
     .time-display {
       float: left;
-      padding: 4px;
+      padding: 4px 4px 4px 0;
       height: 40px;
-      width: 92px;
+      width: 105px;
       text-align: center;
       .time {
         display: inline-block;
