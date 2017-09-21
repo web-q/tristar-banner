@@ -189,7 +189,7 @@ gulp.task('sass:dist', function() {
             .pipe(header(bannerMessageJsCss, {
               pkg: pkg,
               facilityName: facility.title,
-              archivePostfix: currentSize
+              archivePostfix: currentConfig[j].id
             }))
             .pipe(rename('style.css'))          
             .pipe(gulp.dest(currentConfig[j].id + '/dist/' + facility.folder ))      
