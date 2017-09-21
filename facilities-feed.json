@@ -6,6 +6,7 @@
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/47cb510a-b910-439d-8a9c-dd5cfae6096a/knockOutLogo",
 			"customLogo320x50": "tristar-skyline.png",
 			"customLogo300x250": "tristar-skyline.png",
+			"customLogo728x90": "tristar-skyline.png",
 			"url" : "http://tristarskyline.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -29,6 +30,7 @@
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/ee886694-858b-465d-832e-20caf97009b4/knockOutLogo",
 			"customLogo320x50": "tristar-spring-hill.png",
 			"customLogo300x250": "tristar-spring-hill.png",
+			"customLogo728x90": "tristar-spring-hill.png",
 			"url" : "http://tristarspringhiller.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -40,6 +42,7 @@
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/1a422eb7-e155-4360-96b2-9e37e4698f39/knockOutLogo",
 			"customLogo320x50": "tristar-summit.png",
 			"customLogo300x250": "tristar-summit.png",
+			"customLogo728x90": "tristar-summit.png",
 			"url" : "http://tristarsummit.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -51,6 +54,7 @@
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/f57db0bd-97b7-4c81-870f-04555558c5b2/knockOutLogo",
 			"customLogo320x50": "tristar-stonecrest.png",
 			"customLogo300x250": "tristar-stonecrest.png",
+			"customLogo728x90": "tristar-stonecrest.png",
 			"url" : "http://tristarstonecrest.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -62,6 +66,7 @@
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/492cde2a-f217-4b6a-b7b6-d9ae1543347c/knockOutLogo",
 			"customLogo320x50": "tristar-hendersonville.png",
 			"customLogo300x250": "tristar-hendersonville.png",
+			"customLogo728x90": "tristar-hendersonville.png",
 			"url" : "http://tristarhendersonville.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -73,6 +78,7 @@
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/94b7bd31-a6f3-4779-8265-5253ed9c4101/knockOutLogo",
 			"customLogo320x50": "tristar-portland-er.png",
 			"customLogo300x250": "tristar-portland-er.png",
+			"customLogo728x90": "tristar-portland-er.png",
 			"url" : "http://tristarportland.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -96,6 +102,7 @@
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/e041c3c6-bdcd-4ee2-863f-be3acff4ab46/knockOutLogo",
 			"customLogo320x50": "tristar-greenview.png",
 			"customLogo300x250": "tristar-greenview.png",
+			"customLogo728x90": "tristar-greenview.png",
 			"url" : "http://tristargreenviewregional.com",			
 			"disclaimer":"http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
@@ -107,6 +114,7 @@
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/3e172335-3648-4073-a8ca-d2b6c1e59220/knockOutLogo",
 			"customLogo320x50": "parkridge-medical.png",
 			"customLogo300x250": "parkridge-medical.png",
+			"customLogo728x90": "parkridge-medical.png",
 			"url" : "http://parkridgemedicalcenter.com",			
 			"disclaimer":"http://parkridgemedicalcenter.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#00376f"
@@ -118,6 +126,7 @@
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/56d23c7d-ee1c-4f96-b996-ec182d8dc7e6/knockOutLogo",
 			"customLogo320x50": "parkridge-east.png",
 			"customLogo300x250": "parkridge-east.png",
+			"customLogo728x90": "parkridge-east.png",
 			"url" : "http://parkridgeeasthospital.com",			
 			"disclaimer":"http://parkridgeeasthospital.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#00376f"
@@ -129,6 +138,7 @@
 			"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/65780d85-505d-4f63-b64d-b4f81b5ff011/knockOutLogo",
 			"customLogo320x50": "redmond-regional.png",
 			"customLogo300x250": "redmond-regional.png",
+			"customLogo728x90": "redmond-regional.png",
 			"url" : "http://redmondregional.com",			
 			"disclaimer":"http://redmondregional.com/patients-visitors/er-wait-times-disclaimer.dot",
 			"bgcolor":"#004990"
