@@ -293,8 +293,12 @@ gulp.task('uglify', function() {
             facilityName: facility.title,
             archivePostfix: currentConfig[j].id 
           }))
-          .pipe(gulp.dest(currentConfig[j].id + '/dist/' + facility.folder))
+          .pipe(gulp.dest(currentConfig[j].id + '/dist/' + facility.folder))          
       );    
+      tasks.push(
+        gulp.src(currentConfig[j].id + '/dev/Enabler.js')
+        .pipe(gulp.dest(currentConfig[j].id + '/dist/' + facility.folder))          
+      );
     }
   }
   return mergeStream(tasks); 
