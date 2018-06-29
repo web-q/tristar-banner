@@ -1,17 +1,4 @@
-[
-	{
-		"title": "Cartersville Medical Center",
-		"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
-		"ertitle": "Cartersville",
-		"knockoutlogo": "https://core.secure.ehc.com/contentAsset/raw-data/a8cd0637-53b7-41c2-b7da-cb2936aa080c/knockOutLogo",
-		"customLogo320x50": "",
-		"customLogo300x250": "",
-		"customLogo728x90": "",
-		"url": "https://cartersvillemedical.com",
-		"disclaimer": "https://cartersvillemedical.com/patients-visitors/er-wait-times-disclaimer.dot",
-		"bgcolor": "#d3393f",
-		"color": "#000000"
-	},
+[		
 	{
 		"title": "Tristar Skyline Medical Center",
 		"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
