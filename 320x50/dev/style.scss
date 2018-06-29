@@ -4,7 +4,7 @@
 
 /* CSS Document */
 
-$bannerBackColor: #004990;
+//$bannerBackColor: #004990;
 $bannerTextColor: #ffffff;
 $erTextColor: #ff6347;
 $erBackColor: #000000;
@@ -59,11 +59,11 @@ body * {
   top: 0px;
   left: 0px;
   z-index: 100;
-  background-color: $bannerBackColor;
+  background-color: $brandingBackColor;
   .logo-wrapper {
     float: left;
     padding: 4px;
-    background-color: $bannerBackColor;
+    background-color: $brandingBackColor;
     height: 40px;
     width: 132px;
     font-size: 0;
@@ -86,7 +86,7 @@ body * {
   .title {
     float: left;
     padding: 4px;
-    background-color: $bannerBackColor;
+    background-color: $brandingBackColor;
     height: 40px;
     width: 53px;
     text-align: center;
@@ -97,13 +97,13 @@ body * {
       font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
-      color: $erTextColor;
+      color: $brandingTextColor;
     }
     span.er {
       line-height: 20px;
       font-size: 20px;
       font-weight: 700;
-      color: $erTextColor;
+      color: $brandingTextColor;
     }
   }
   .time-display-wrap {
@@ -119,7 +119,7 @@ body * {
       border: 0 solid transparent;
       border-bottom-width: 9px;
       border-top-width: 9px;
-      border-left: 9px solid $bannerBackColor;
+      border-left: 9px solid $brandingBackColor;
       margin-top: 7px;
       margin-left: -1px;
     }

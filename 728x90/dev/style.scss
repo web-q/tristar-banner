@@ -4,7 +4,8 @@
 
 /* CSS Document */
 
-$bannerBackColor: #004990;
+//$brandingBackColor: #004990;
+//$brandingTextColor: #ffffff;
 $bannerTextColor: #ffffff;
 $erTextColor: #ff6347;
 $erBackColor: #000000;
@@ -59,11 +60,11 @@ body * {
   top: 0px;
   left: 0px;
   z-index: 100;
-  background-color: $bannerBackColor;
+  background-color: $brandingBackColor;
   .logo-wrapper {
     float: left;
     padding: 6px;
-    background-color: $bannerBackColor;
+    background-color: $brandingBackColor;
     height: 76px;
     width: 356px;
     font-size: 0;
@@ -86,7 +87,7 @@ body * {
   .title {
     float: left;
     padding: 6px;
-    background-color: $bannerBackColor;
+    background-color: $brandingBackColor;
     height: 76px;
     width: 106px;
     text-align: center;
@@ -97,13 +98,13 @@ body * {
       font-size: 20px;
       font-weight: 700;
       text-transform: uppercase;
-      color: $erTextColor;
+      color: $brandingTextColor;
     }
     span.er {
       line-height: 36px;
       font-size: 36px;
       font-weight: 700;
-      color: $erTextColor;
+      color: $brandingTextColor;
     }
   }
  .er-wait-time{
@@ -119,7 +120,7 @@ body * {
       border: 0 solid transparent;
       border-bottom-width: 18px;
       border-top-width: 18px;
-      border-left: 18px solid #004990;
+      border-left: 18px solid $brandingBackColor;
       margin-top: 24px;
       margin-left: -1px;
     }
