@@ -130,14 +130,12 @@ gulp.task('handlebars:dev', function() {
 
 gulp.task('del', function() {
   var i;
-  for (i = 0; i < currentConfig.length; i++){
-    gutil.log('Deleting ' + currentConfig[i].id + '...');
-    del([
-      currentConfig[i].id + '/dist/*',
-      currentConfig[i].id + '/delivery/*',
-      currentConfig[i].id + '/archive/*'
-    ]);
-  }  
+  var folderArray = [];
+  for (i = 0; i < currentConfig.length; i++){      
+    folderArray.push(currentConfig[i].id + '/dist/*');
+    folderArray.push(currentConfig[i].id + '/delivery/*');      
+  }
+  return del(folderArray);  
 });
 
 gulp.task('download-image:dist', function(){
@@ -150,8 +148,7 @@ gulp.task('download-image:dist', function(){
   for (j = 0; j < currentConfig.length; j++) {   
 
     for (i = 0; i < facilities.length; i++) {   
-      facility = facilities[i];
-      logoURL;      
+      facility = facilities[i];      
 
       if(facility.hasOwnProperty('customLogo' + currentConfig[j].id) && facility['customLogo' + currentConfig[j].id] !== ''){        
         logoURL = gitURL + currentConfig[j].id + '/logo/' + facility['customLogo' + currentConfig[j].id];        
@@ -159,14 +156,13 @@ gulp.task('download-image:dist', function(){
         logoURL = facility.knockoutlogo + currentConfig[j].imgFilter;
       }
       tasks.push(
-        download(logoURL)
+        download(logoURL)          
           .pipe(rename('logo.png'))
           .pipe(gulp.dest(currentConfig[j].id + '/dist/' + facility.folder))
-      );
+      );     
     }
-
   }
-          
+
   return mergeStream(tasks);       
 });
   
@@ -428,7 +424,7 @@ gulp.task('watch', function() {
 gulp.task('build', function(callback) {
   //runSequence('del', 'sass:dist', 'handlebars:dist', 'copy-to-dist-folder', 'minify-html', 'uglify', 'compress', 'copyBackupFile', callback);
   runSequence(
-    'del', 
+    'del',
     'download-image:dist',
     'sass:dist', 
     'handlebars:dist', 
