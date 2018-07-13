@@ -4,9 +4,10 @@
 
 /* CSS Document */
 
-//$bannerBackColor: #004990;
+//$brandingBackColor: #004990;
+//$brandingTextColor: #ff6347;
+//$waitTimeColor: #ff6347;
 $bannerTextColor: #ffffff;
-$erTextColor: #ff6347;
 $erBackColor: #000000;
 
 html {
@@ -136,7 +137,7 @@ body * {
         font-size: 26px;
         line-height: 26px;
         height: 26px;
-        color: $erTextColor;
+        color: $waitTimeColor;
       }
       .mins {
         display: inline-block;

@@ -10,7 +10,8 @@
 		"url": "https://cartersvillemedical.com",
 		"disclaimer": "https://cartersvillemedical.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#d3393f",
-		"color": "#000000"
+		"color": "#000000",
+		"waitTimeColor": "#d3393f"
 	},
 	{
 		"title": "Tristar Skyline Medical Center",
@@ -23,7 +24,8 @@
 		"url": "http://tristarskyline.com",
 		"disclaimer": "http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#004990",
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
 	},
 	{
 		"title": "TriStar Centennial Medical Center",
@@ -36,7 +38,8 @@
 		"url": "http://tristarcentennial.com",
 		"disclaimer": "http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#004990",
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
 	},
 	{
 		"title": "TriStar Spring Hill ER",
@@ -49,7 +52,8 @@
 		"url": "http://tristarspringhiller.com",
 		"disclaimer": "http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#004990",
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
 	},
 	{
 		"title": "TriStar Summit Medical Center",
@@ -62,7 +66,9 @@
 		"url": "http://tristarsummit.com",
 		"disclaimer": "http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#004990",
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
+		
 	},
 	{
 		"title": "TriStar Stonecrest Medical Center",
@@ -75,7 +81,8 @@
 		"url": "http://tristarstonecrest.com",
 		"disclaimer": "http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#004990",
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
 	},
 	{
 		"title": "TriStar Hendersonville Medical Center",
@@ -88,7 +95,8 @@
 		"url": "http://tristarhendersonville.com",
 		"disclaimer": "http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#004990",
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
 	},
 	{
 		"title": "TriStar Portland ER",
@@ -101,7 +109,8 @@
 		"url": "http://tristarportland.com",
 		"disclaimer": "http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#004990",
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
 	},
 	{
 		"title": "Eastside Medical Center",
@@ -114,7 +123,8 @@
 		"url": "http://eastsidemedical.com",
 		"disclaimer": "http://eastsidemedical.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#0e3775",
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
 	},
 	{
 		"title": "TriStar Greenview Regional Hospital",
@@ -127,7 +137,8 @@
 		"url": "http://tristargreenviewregional.com",
 		"disclaimer": "http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#004990",
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
 	},
 	{
 		"title": "Parkridge Medical Center",
@@ -140,7 +151,8 @@
 		"url": "http://parkridgemedicalcenter.com",
 		"disclaimer": "http://parkridgemedicalcenter.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#00376f",
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
 	},
 	{
 		"title": "Parkridge East Hospital",
@@ -153,7 +165,8 @@
 		"url": "http://parkridgeeasthospital.com",
 		"disclaimer": "http://parkridgeeasthospital.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#00376f",
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
 	},
 	{
 		"title": "Redmond Regional Medical Center",
@@ -166,7 +179,8 @@
 		"url": "http://redmondregional.com",
 		"disclaimer": "http://redmondregional.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#004990",		
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
 	},
 	{
 		"title": "The Children's Hospital at TriStar Centennial",
@@ -179,6 +193,7 @@
 		"url": "http://thechildrenshospitalnashville.com/",
 		"disclaimer": "http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
 		"bgcolor": "#004990",
-		"color": "#ff6347"
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
 	}
 ]

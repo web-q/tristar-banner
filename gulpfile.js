@@ -113,6 +113,7 @@ gulp.task('sass:dev', function() {
   return gulp.src(currentSize + '/dev/style.scss')
     .pipe(header('$brandingBackColor: ' + facilities[0].bgcolor + ';'))
     .pipe(header('$brandingTextColor: ' + facilities[0].color + ';'))
+    .pipe(header('$waitTimeColor: ' + facilities[0].waitTimeColor + ';'))
     .pipe(sass({
       outputStyle: "expanded"
     }).on('error', sass.logError))
@@ -181,6 +182,7 @@ gulp.task('sass:dist', function() {
           gulp.src(currentConfig[j].id + '/dev/style.scss')
             .pipe(header('$brandingBackColor: ' + facility.bgcolor + ';'))
             .pipe(header('$brandingTextColor: ' + facility.color + ';'))
+            .pipe(header('$waitTimeColor: ' + facility.waitTimeColor + ';'))
             .pipe(sass({
               outputStyle: "compressed"
             }).on('error', sass.logError))
