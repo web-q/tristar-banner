@@ -1,4 +1,18 @@
 [		
+	{		 
+		"title": "TriStar Mt. Juliet ER",
+		"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
+		"ertitle": "TriStar Mt. Juliet ER",
+		"knockoutlogo": "https://core.secure.ehc.com/contentAsset/image/94b7bd31-a6f3-4779-8265-5253ed9c4101/knockOutLogo",
+		"customLogo320x50": "tristar-mt-juliet-er.png",
+		"customLogo300x250": "tristar-mt-juliet-er.png",
+		"customLogo728x90": "tristar-mt-juliet-er.png",
+		"url": "tristarmtjulieter.com",
+		"disclaimer": "http://tristarhealth.com/patients-visitors/er-wait-times-disclaimer.dot",
+		"bgcolor": "#004990",
+		"color": "#ff6347",
+		"waitTimeColor": "#ff6347"
+	},	
 	{
 		"title": "Cartersville Medical Center",
 		"erfeed": "hcafeeds.medcity.net/rss/er/tri_rss_feed.json",
